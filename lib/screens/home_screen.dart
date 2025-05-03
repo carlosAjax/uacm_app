@@ -1,117 +1,268 @@
+import 'dart:math' as math;
+
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:uacm_app/screens/screens.dart';
+import 'package:uacm_app/screens/servicios/inner_servicios/comunidad_universitaria_screen.dart';
+import 'package:uacm_app/widgets/list_tile_custom.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: ListView(
-          padding: EdgeInsets.all(8),
-          shrinkWrap: true,
+    return Scaffold(
+      drawer: Drawer(),
+      appBar: AppBar(
+        elevation: 4,
+        backgroundColor: Colors.transparent,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            ListTileCustom(
+            Text(
+              'UACM',
+              style: Theme.of(context).textTheme.displaySmall!.copyWith(
+                color: Colors.white,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 5.5,
+                //fontFamily:
+              ),
+            ),
+          ],
+        ),
+      ),
+
+      body: ListView(
+        padding: EdgeInsets.all(16),
+        shrinkWrap: true,
+        children: [
+          BounceInDown(
+            child: CardCustom(
+              height: 150,
               title: 'Estudios',
-              leading: Icons.menu_book,
-              trailing: Icons.arrow_forward_ios_outlined,
+              urlImg: 'assets/estudiar.jpg',
               onTap: () {
                 Navigator.of(context).pushNamed(EstudiosScreen.routeName);
               },
             ),
+          ),
+          SizedBox(height: 10),
 
-            ListTileCustom(
-              title: 'Cultura',
-              leading: Icons.museum,
-              trailing: Icons.arrow_forward_ios_outlined,
-              onTap: () {
-                Navigator.of(context).pushNamed(CulturaScreen.routeName);
-              },
-            ),
-            ListTileCustom(
-              title: 'Preferencias',
-              leading: Icons.settings,
-              trailing: Icons.arrow_forward_ios_outlined,
-              onTap: () {
-                Navigator.of(context).pushNamed(PreferenciasScreen.routeName);
-              },
-            ),
-            ListTileCustom(
-              title: 'Rutas',
-              leading: Icons.directions,
-              trailing: Icons.arrow_forward_ios_outlined,
-              onTap: () {
-                Navigator.of(context).pushNamed(RutasScreen.routeName);
-              },
-            ),
-            ListTileCustom(
+          Row(
+            children: [
+              Expanded(
+                child: BounceInLeft(
+                  child: CardCustom(
+                    height: MediaQuery.of(context).size.height * 0.3,
+                    title: 'Cultura',
+                    urlImg: 'assets/cultura.jpg',
+                    onTap: () {
+                      Navigator.of(context).pushNamed(CulturaScreen.routeName);
+                    },
+                  ),
+                ),
+              ),
+              SizedBox(width: 10),
+
+              Expanded(
+                child: BounceInRight(
+                  child: CardCustom(
+                    height: MediaQuery.of(context).size.height * 0.3,
+                    title: 'Preferencias',
+                    urlImg: 'assets/preferencias.jpg',
+                    onTap: () {
+                      Navigator.of(
+                        context,
+                      ).pushNamed(PreferenciasScreen.routeName);
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 10),
+          BounceInDown(
+            child: CardCustom(
+              height: 150,
               title: 'Comunición universitaria',
-              leading: Icons.forum,
-              trailing: Icons.arrow_forward_ios_outlined,
+              urlImg: 'assets/comunicacion.jpg',
               onTap: () {
                 Navigator.of(
                   context,
                 ).pushNamed(ComunicacionUnivScreen.routeName);
               },
             ),
-            ListTileCustom(
-              title: 'Deportes',
-              leading: Icons.fitness_center_outlined,
-              trailing: Icons.arrow_forward_ios_outlined,
-              onTap: () {
-                Navigator.of(context).pushNamed(DeportesScreen.routeName);
-              },
-            ),
-            ListTileCustom(
+          ),
+          SizedBox(height: 10),
+          Row(
+            children: [
+              Expanded(
+                child: BounceInLeft(
+                  child: CardCustom(
+                    height: MediaQuery.of(context).size.height * 0.3,
+                    title: 'Rutas',
+                    urlImg: 'assets/rutas.jpg',
+                    onTap: () {
+                      Navigator.of(context).pushNamed(RutasScreen.routeName);
+                    },
+                  ),
+                ),
+              ),
+              SizedBox(width: 10),
+
+              Expanded(
+                child: BounceInRight(
+                  child: CardCustom(
+                    height: MediaQuery.of(context).size.height * 0.3,
+                    title: 'Deportes',
+                    urlImg: 'assets/deportes.jpg',
+                    onTap: () {
+                      Navigator.of(context).pushNamed(DeportesScreen.routeName);
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 10),
+          BounceInDown(
+            child: CardCustom(
+              height: 150,
               title: 'Servicios',
-              leading: Icons.support,
-              trailing: Icons.arrow_forward_ios_outlined,
+              urlImg: 'assets/estudiar.jpg',
               onTap: () {
                 Navigator.of(context).pushNamed(ServiciosScreen.routeName);
               },
             ),
-          ],
-        ),
+          ),
+          SizedBox(height: 5),
+          /*  ListTileCustom(
+            title: 'Servicios',
+            leading: Icons.menu_book,
+            trailing: Icons.arrow_forward_ios_outlined,
+            onTap: () {
+              Navigator.of(context).pushNamed(EstudiosScreen.routeName);
+            },
+          ),
+    
+          ListTileCustom(
+            title: 'Cultura',
+            leading: Icons.museum,
+            trailing: Icons.arrow_forward_ios_outlined,
+            onTap: () {
+              Navigator.of(context).pushNamed(CulturaScreen.routeName);
+            },
+          ),
+          ListTileCustom(
+            title: 'Preferencias',
+            leading: Icons.settings,
+            trailing: Icons.arrow_forward_ios_outlined,
+            onTap: () {
+              Navigator.of(context).pushNamed(PreferenciasScreen.routeName);
+            },
+          ),
+          ListTileCustom(
+            title: 'Comunición universitaria',
+            leading: Icons.directions,
+            trailing: Icons.arrow_forward_ios_outlined,
+            onTap: () {
+              Navigator.of(context).pushNamed(RutasScreen.routeName);
+            },
+          ),
+          ListTileCustom(
+            title: 'Comunición universitaria',
+            leading: Icons.forum,
+            trailing: Icons.arrow_forward_ios_outlined,
+            onTap: () {
+              Navigator.of(
+                context,
+              ).pushNamed(ComunicacionUnivScreen.routeName);
+            },
+          ),
+          ListTileCustom(
+            title: 'Deportes',
+            leading: Icons.fitness_center_outlined,
+            trailing: Icons.arrow_forward_ios_outlined,
+            onTap: () {
+              Navigator.of(context).pushNamed(DeportesScreen.routeName);
+            },
+          ),
+          ListTileCustom(
+            title: 'Servicios',
+            leading: Icons.support,
+            trailing: Icons.arrow_forward_ios_outlined,
+            onTap: () {
+              Navigator.of(context).pushNamed(ServiciosScreen.routeName);
+            },
+          ), */
+        ],
       ),
     );
   }
 }
 
-class ListTileCustom extends StatelessWidget {
-  const ListTileCustom({
+class CardCustom extends StatelessWidget {
+  const CardCustom({
     super.key,
     required this.title,
-    required this.leading,
-    required this.trailing,
+    required this.urlImg,
+    required this.height,
     this.onTap,
   });
+
   final String title;
-  final IconData leading;
-  final IconData trailing;
+  final String urlImg;
+  final double height;
   final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(3.0),
-      child: ListTile(
-        onTap: onTap,
-        iconColor: Colors.cyan[800],
-        contentPadding: EdgeInsets.all(24),
-        splashColor: Colors.black87,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-          side: BorderSide(color: Colors.cyan.shade800),
+    return SizedBox(
+      height: height,
+      child: Card(
+        clipBehavior: Clip.antiAlias,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+
+        child: InkWell(
+          onTap: onTap,
+          child: Stack(
+            children: [
+              Positioned.fill(child: Image.asset(urlImg, fit: BoxFit.cover)),
+              Positioned.fill(
+                child: Container(
+                  height: height,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    gradient: LinearGradient(
+                      colors: [
+                        Theme.of(
+                          context,
+                        ).colorScheme.onPrimaryContainer.withValues(alpha: 0.6),
+
+                        Theme.of(
+                          context,
+                        ).colorScheme.primaryContainer.withValues(alpha: 0.5),
+                      ],
+                      stops: [0.0, 0.9],
+
+                      tileMode: TileMode.repeated,
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      transform: GradientRotation(28),
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      title,
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
-        tileColor: Colors.pink.shade100
-            .withValues(alpha: .3)
-            .withGreen(230)
-            .withRed(200),
-        dense: false,
-        title: Text(title),
-        leading: Icon(leading),
-        trailing: Icon(trailing),
       ),
     );
   }

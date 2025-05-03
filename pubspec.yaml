@@ -28,9 +28,11 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animate_do: ^4.2.0
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+  flutter_staggered_grid_view: ^0.7.0
   google_fonts: ^6.2.1
   syncfusion_flutter_pdfviewer: ^29.1.39
 
@@ -49,8 +51,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/
+    - assets/pdfs/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
