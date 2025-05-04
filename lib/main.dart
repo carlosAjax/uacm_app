@@ -22,11 +22,12 @@ class MyApp extends StatelessWidget {
 
     MaterialTheme theme = MaterialTheme(textTheme);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme:
           brightness == Brightness.dark
               ? theme.light()
-              : theme.darkHighContrast(),
+              : theme.darkMediumContrast(),
 
       home: const HomeScreen(),
       routes: {

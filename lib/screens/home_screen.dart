@@ -19,14 +19,16 @@ class HomeScreen extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text(
-              'UACM',
-              style: Theme.of(context).textTheme.displaySmall!.copyWith(
-                color: Colors.white,
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 5.5,
-                //fontFamily:
+            Padding(
+              padding: const EdgeInsets.only(right: 15),
+              child: Text(
+                'UACM',
+                style: TextStyle(
+                  fontFamily: 'Gotham',
+                  fontSize: 34,
+                  color: Color(0xFF862633),
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],
