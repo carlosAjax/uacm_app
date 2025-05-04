@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: MainDrawer(),
       appBar: AppBar(
         elevation: 4,
         backgroundColor: Colors.transparent,
@@ -26,7 +26,8 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Gotham',
                   fontSize: 34,
-                  color: Color(0xFF862633),
+                  //color: Color(0xFF862633),
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -198,6 +199,106 @@ class HomeScreen extends StatelessWidget {
               Navigator.of(context).pushNamed(ServiciosScreen.routeName);
             },
           ), */
+        ],
+      ),
+    );
+  }
+}
+
+class MainDrawer extends StatelessWidget {
+  const MainDrawer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: Column(
+        children: [
+          DrawerHeader(
+            padding: EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Theme.of(context).colorScheme.primaryContainer,
+                  Theme.of(
+                    context,
+                  ).colorScheme.primaryContainer.withValues(alpha: 0.8),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/UACM_2023_Blanco.png', fit: BoxFit.cover),
+              ],
+            ),
+          ),
+
+          ListTile(
+            title: Text(
+              'Perfil',
+              style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                color: Theme.of(context).colorScheme.onSurface,
+                fontSize: 18,
+              ),
+            ),
+            leading: Icon(
+              Icons.person,
+              size: 26,
+              color: Theme.of(context).colorScheme.onSurface,
+            ),
+            onTap: () {},
+          ),
+          Divider(),
+          ListTile(
+            title: Text(
+              'Credencial',
+              style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                color: Theme.of(context).colorScheme.onSurface,
+                fontSize: 18,
+              ),
+            ),
+            leading: Icon(
+              Icons.badge,
+              size: 26,
+              color: Theme.of(context).colorScheme.onSurface,
+            ),
+            onTap: () {},
+          ),
+          Divider(),
+          ListTile(
+            title: Text(
+              'Preguntas Frecuentes',
+              style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                color: Theme.of(context).colorScheme.onSurface,
+                fontSize: 18,
+              ),
+            ),
+            leading: Icon(
+              Icons.question_answer,
+              size: 26,
+              color: Theme.of(context).colorScheme.onSurface,
+            ),
+            onTap: () {},
+          ),
+          Divider(),
+
+          ListTile(
+            title: Text(
+              'Logout',
+              style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                color: Theme.of(context).colorScheme.onSurface,
+                fontSize: 18,
+              ),
+            ),
+            leading: Icon(
+              Icons.logout,
+              size: 26,
+              color: Theme.of(context).colorScheme.onSurface,
+            ),
+            onTap: () {},
+          ),
         ],
       ),
     );
