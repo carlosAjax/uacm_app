@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uacm_app/screens/calendario_escolar_screen.dart';
+import 'package:uacm_app/screens/dashboard/dashboard_screen.dart';
 import 'package:uacm_app/screens/home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uacm_app/screens/screens.dart';
@@ -24,9 +25,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: brightness == Brightness.dark ? theme.light() : theme.dark(),
+      theme: theme.dark(),
 
-      home: const HomeScreen(),
+      home: const DashboardScreen(),
       routes: {
         ComunicacionUnivScreen.routeName: (context) => ComunicacionUnivScreen(),
         EstudiosScreen.routeName: (context) => EstudiosScreen(),
