@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:uacm_app/screens/calendario_escolar_screen.dart';
 import 'package:uacm_app/screens/dashboard/dashboard_screen.dart';
 import 'package:uacm_app/screens/home_screen.dart';
@@ -8,7 +9,13 @@ import 'package:uacm_app/screens/servicios/servicios.dart';
 import 'package:uacm_app/theme/material_theme.dart';
 import 'package:uacm_app/util/util.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Asegura que las barras de estado y navegación estén visibles
+  /* SystemChrome.setEnabledSystemUIMode(
+    SystemUiMode.manual,
+    overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom],
+  ); */
   runApp(const MyApp());
 }
 
@@ -17,7 +24,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final brightness = View.of(context).platformDispatcher.platformBrightness;
+    //final brightness = View.of(context).platformDispatcher.platformBrightness;
 
     TextTheme textTheme = createTextTheme(context, "ADLaM Display", "Lato");
 

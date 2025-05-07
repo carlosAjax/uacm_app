@@ -38,6 +38,7 @@ class _DashboardScreenState extends State<DashboardScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: TabBarView(
         physics: NeverScrollableScrollPhysics(),
         controller: controller,
