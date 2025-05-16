@@ -5,6 +5,7 @@ import 'package:uacm_app/screens/calendario_escolar_screen.dart';
 import 'package:uacm_app/screens/dashboard/dashboard_screen.dart';
 import 'package:uacm_app/screens/home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uacm_app/screens/login_screen.dart';
 import 'package:uacm_app/screens/screens.dart';
 import 'package:uacm_app/screens/servicios/servicios.dart';
 import 'package:uacm_app/theme/material_theme.dart';
@@ -37,8 +38,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: theme.dark(),
 
-      home: const DashboardScreen(),
+      home: LoginScreen(),
       routes: {
+        LoginScreen.routeName: (context) => LoginScreen(),
         DashboardScreen.routeName: (context) => DashboardScreen(),
         ComunicacionUnivScreen.routeName: (context) => ComunicacionUnivScreen(),
         EstudiosScreen.routeName: (context) => EstudiosScreen(),

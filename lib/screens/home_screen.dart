@@ -1,7 +1,10 @@
 import 'dart:math' as math;
 
 import 'package:animate_do/animate_do.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:uacm_app/screens/login_screen.dart';
 import 'package:uacm_app/screens/screens.dart';
 import 'package:uacm_app/screens/servicios/inner_servicios/comunidad_universitaria_screen.dart';
 import 'package:uacm_app/widgets/list_tile_custom.dart';
@@ -297,7 +300,11 @@ class MainDrawer extends StatelessWidget {
               size: 26,
               color: Theme.of(context).colorScheme.onSurface,
             ),
-            onTap: () {},
+            onTap: () async {
+              await GoogleSignIn().signOut();
+              await FirebaseAuth.instance.signOut();
+              Navigator.of(context).pushNamed(LoginScreen.routeName);
+            },
           ),
         ],
       ),
