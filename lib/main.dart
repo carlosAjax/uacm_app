@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
 
       home: const DashboardScreen(),
       routes: {
+        DashboardScreen.routeName: (context) => DashboardScreen(),
         ComunicacionUnivScreen.routeName: (context) => ComunicacionUnivScreen(),
         EstudiosScreen.routeName: (context) => EstudiosScreen(),
         PreferenciasScreen.routeName: (context) => PreferenciasScreen(),

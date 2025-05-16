@@ -7,6 +7,8 @@ import 'package:uacm_app/screens/screens.dart';
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
 
+  static const String routeName = "/DashboardScreen";
+
   @override
   State<DashboardScreen> createState() => _DashboardScreenState();
 }
