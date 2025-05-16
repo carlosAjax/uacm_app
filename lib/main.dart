@@ -6,6 +6,7 @@ import 'package:uacm_app/screens/dashboard/dashboard_screen.dart';
 import 'package:uacm_app/screens/home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uacm_app/screens/login_screen.dart';
+import 'package:uacm_app/screens/perfil_screen.dart';
 import 'package:uacm_app/screens/screens.dart';
 import 'package:uacm_app/screens/servicios/servicios.dart';
 import 'package:uacm_app/theme/material_theme.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
       routes: {
         LoginScreen.routeName: (context) => LoginScreen(),
         DashboardScreen.routeName: (context) => DashboardScreen(),
+        PerfilScreen.routeName: (context) => PerfilScreen(),
         ComunicacionUnivScreen.routeName: (context) => ComunicacionUnivScreen(),
         EstudiosScreen.routeName: (context) => EstudiosScreen(),
         PreferenciasScreen.routeName: (context) => PreferenciasScreen(),
