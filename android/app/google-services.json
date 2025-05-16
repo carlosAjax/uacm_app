@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "719161922290",
+    "project_id": "uacm-app-1fd8e",
+    "storage_bucket": "uacm-app-1fd8e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719161922290:android:90d9e4ee4fe5301585366b",
+        "android_client_info": {
+          "package_name": "com.example.uacm_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBwHCRgOwJhCPhdjUgIrDRhYyiuFwPIBU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
