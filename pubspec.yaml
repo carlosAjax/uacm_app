@@ -30,15 +30,16 @@ environment:
 dependencies:
   animate_do: ^4.2.0
   cupertino_icons: ^1.0.8
+  firebase_auth: ^5.5.3
+  firebase_core: ^3.13.0
   flutter:
     sdk: flutter
   flutter_native_splash: ^2.4.6
   flutter_staggered_grid_view: ^0.7.0
   google_fonts: ^6.2.1
-  syncfusion_flutter_pdfviewer: ^29.1.39
   google_sign_in: ^6.3.0
-  firebase_auth: ^5.5.3
-  firebase_core: ^3.13.0
+  http: ^1.4.0
+  syncfusion_flutter_pdfviewer: ^29.1.39
 
 flutter_native_splash:
   color: "#000000"
@@ -48,9 +49,6 @@ flutter_native_splash:
   android_12:
     color: "#000000"
     image: assets/UACM_splash_03.png
-
-
-
 
 dev_dependencies:
   flutter_lints: ^5.0.0

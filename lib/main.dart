@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:uacm_app/screens/calendario_escolar_screen.dart';
 import 'package:uacm_app/screens/dashboard/dashboard_screen.dart';
+import 'package:uacm_app/screens/historial_screen.dart';
 import 'package:uacm_app/screens/home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uacm_app/screens/login_screen.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         LoginScreen.routeName: (context) => LoginScreen(),
         DashboardScreen.routeName: (context) => DashboardScreen(),
         PerfilScreen.routeName: (context) => PerfilScreen(),
+        HistorialScreen.routeName: (context) => HistorialScreen(),
         ComunicacionUnivScreen.routeName: (context) => ComunicacionUnivScreen(),
         EstudiosScreen.routeName: (context) => EstudiosScreen(),
         PreferenciasScreen.routeName: (context) => PreferenciasScreen(),

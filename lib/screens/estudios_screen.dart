@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uacm_app/screens/calendario_escolar_screen.dart';
+import 'package:uacm_app/screens/historial_screen.dart';
 import 'package:uacm_app/widgets/list_tile_custom.dart';
 
 class EstudiosScreen extends StatelessWidget {
@@ -19,7 +20,7 @@ class EstudiosScreen extends StatelessWidget {
               leading: Icons.assessment,
               trailing: Icons.arrow_forward_ios_outlined,
               onTap: () {
-                Navigator.of(context).pushNamed(EstudiosScreen.routeName);
+                Navigator.of(context).pushNamed(HistorialScreen.routeName);
               },
             ),
             ListTileCustom(
