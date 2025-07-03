@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:http/http.dart';
+import 'package:uacm_app/model/estudiante.dart';
 import 'package:uacm_app/model/info.dart';
 
 class ApiService {
@@ -32,5 +34,22 @@ class ApiService {
     }
 
     throw Exception('No se pudo cargar el historial');
+  }
+
+  // Función para realizar la solicitud GET a la URL
+  Future<Estudiante> fetchEstudiantePorQR() async {
+    
+   
+    final user = FirebaseAuth.instance.currentUser;
+    final uid = user?.uid ?? 'not found uid';
+    final fotoUrl = user?.photoURL ?? 'not found';
+    final userDisplayName = user?.displayName ?? 'not found username';
+    
+    final Estudiante estudiante = Estudiante(nombre: userDisplayName, matricula: uid, licenciatura: 'Ingenieria de Software', urlImg: fotoUrl);
+    
+    return estudiante;
+
+
+    
   }
 }

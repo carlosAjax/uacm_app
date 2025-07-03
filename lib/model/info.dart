@@ -3,22 +3,22 @@ class Info {
   final String fkcolegio;
   final String fkcarrera;
   final String fkmateria;
-  final String semestre;
+  final String semestre; //este
   final String consecutivo;
-  final String clave;
+  final String clave; //clave
   final dynamic fkeje;
   final String fkespecializacion;
   final String idMapa;
   final String idmateria;
   final String fkacademia;
   final String estado;
-  final String creditos;
-  final String nombre;
+  final String creditos; //este
+  final String nombre; //este
   final String fkmateriaEquivalente;
 
   final String asignatura;
-  final String eval;
-  final String califletra;
+  final String eval; //este
+  final String califletra; //este
   final String periodo;
   final String statusResultado;
   final String idinscripcion;

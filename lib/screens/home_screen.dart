@@ -4,6 +4,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:uacm_app/screens/credencial_screen.dart';
 import 'package:uacm_app/screens/login_screen.dart';
 import 'package:uacm_app/screens/perfil_screen.dart';
 import 'package:uacm_app/screens/screens.dart';
@@ -271,7 +272,9 @@ class MainDrawer extends StatelessWidget {
               size: 26,
               color: Theme.of(context).colorScheme.onSurface,
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => CredencialScreen(),));
+            },
           ),
           Divider(),
           ListTile(
